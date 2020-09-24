@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import { Card, CardMedia, Grid, Paper, Typography } from "@material-ui/core"
+import { Card,  Grid, Paper, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "../components/Link"
 import Image from "gatsby-image"
@@ -13,12 +13,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Portfolios = ({ data }) => {
+const Portfolios = () => {
   const classes = useStyles()
 
-  const {
-    projects: { nodes: projects },
-  } = data
+  const projects =[]
 
   return (
     <Layout>
@@ -49,43 +47,4 @@ const Portfolios = ({ data }) => {
   )
 }
 
-export const query = graphql`
-  {
-    projects: allContentfulDesignProject(
-      sort: { order: ASC, fields: contentfulid }
-    ) {
-      nodes {
-        id
-        contentfulid
-        title
-        skills
-        link
-        categroy
-        Slug
-        intro {
-          internal {
-            content
-          }
-        }
-        detail {
-          internal {
-            content
-          }
-        }
-        images {
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-        cover {
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-      }
-      totalCount
-    }
-  }
-`
 
-export default Portfolios

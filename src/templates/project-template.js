@@ -11,9 +11,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const ProjectTemplate = ({ data }) => {
+const ProjectTemplate = () => {
   const classes = useStyles()
-  const { project } = data
+  const project = []
 
   return (
     <Layout>
@@ -32,34 +32,5 @@ const ProjectTemplate = ({ data }) => {
   )
 }
 
-export const query = graphql`
-  query GetProject($Slug: String) {
-    project: contentfulDesignProject(Slug: { eq: $Slug }) {
-      id
-      contentfulid
-      title
-      Slug
-      cover {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      images {
-        fluid {
-          aspectRatio
-          ...GatsbyContentfulFluid
-        }
-      }
-      link
-      intro {
-        intro
-      }
-      categroy
-      detail {
-        detail
-      }
-    }
-  }
-`
 
 export default ProjectTemplate

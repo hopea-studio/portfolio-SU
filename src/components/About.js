@@ -9,10 +9,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const About = (props) => {
-  const {
-    about: { nodes: about },
-  } = props.data
+const About = () => {
+  const about = []
 
   const classes = useStyles()
   return (

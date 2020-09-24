@@ -22,12 +22,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Portfolio = (props) => {
+const Portfolio = () => {
   const classes = useStyles()
 
-  const {
-    recent: { nodes: recent },
-  } = props.data
+const recent= []
 
   return (
     <Grid

@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
       <Particles />
       <Grid container justify="center">
         <Grid item className={classes.header}>
-          <Typography variant="h2">Tingjun Han</Typography>
+          <Typography variant="h2">YUE SU</Typography>
         </Grid>
       </Grid>
       <Grid container direction="column" alignItems="center" spacing={10}>

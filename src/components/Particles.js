@@ -28,7 +28,7 @@ const Particles = () => {
         fpsLimit: 60,
         particles: {
           color: {
-            value: "#311b92",
+            value: "#bdbdbd",
           },
           collisions: {
             enable: true,
@@ -52,7 +52,7 @@ const Particles = () => {
             value: 0.9,
           },
           shape: {
-            type: "triangle",
+            type: "circle",
           },
           size: {
             random: true,

@@ -3,6 +3,7 @@ import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
+import GitHubIcon from "@material-ui/icons/GitHub"
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -24,7 +25,7 @@ const Hero = () => {
 
   return (
     <Grid item container md={8}>
-      <Paper className={classes.paper} elevation={1}>
+      <Paper className={classes.paper} elevation={0}>
         <Grid container direction="column" alignItems="center" spacing={1}>
           <Grid item>
             <Avatar className={classes.avatar}></Avatar>
@@ -46,14 +47,18 @@ const Hero = () => {
             </Breadcrumbs>
           </Grid>
           <Grid item spacing={2}>
+            <Link to="https://www.linkedin.com/in/suxyue/" target="_blank">
+              <IconButton>
+                <LinkedInIcon color="primary" />
+              </IconButton>
+            </Link>
+            <Link to="https://github.com/yue-su/" target="_blank">
+              <IconButton>
+                <GitHubIcon color="secondary" />
+              </IconButton>
+            </Link>
             <IconButton>
-              <LinkedInIcon color='primary' />
-            </IconButton>
-            <IconButton>
-              <LinkedInIcon color='secondary' />
-            </IconButton>
-            <IconButton>
-              <LinkedInIcon color='error' />
+              <LinkedInIcon color="error" />
             </IconButton>
           </Grid>
         </Grid>

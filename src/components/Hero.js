@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import GitHubIcon from "@material-ui/icons/GitHub"
+import AvatarImg from "../images/Avatar_Yue_BW.JPG"
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -28,7 +29,10 @@ const Hero = () => {
       <Paper className={classes.paper} elevation={0}>
         <Grid container direction="column" alignItems="center" spacing={1}>
           <Grid item>
-            <Avatar className={classes.avatar}></Avatar>
+            <Avatar
+              className={classes.avatar}
+              src="../images/Avatar_Yue_BW.JPG"
+            ></Avatar>
           </Grid>
           <Grid item>
             <Breadcrumbs>

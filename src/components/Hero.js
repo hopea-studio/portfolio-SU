@@ -4,12 +4,12 @@ import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import GitHubIcon from "@material-ui/icons/GitHub"
-import AvatarImg from "../images/Avatar_Yue_BW.JPG"
+import AvatarImg from "../images/Avatar.jpg"
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    width: theme.spacing(10),
-    height: theme.spacing(10),
+    width: theme.spacing(15),
+    height: theme.spacing(15),
     margin: theme.spacing(6),
   },
   title: {
@@ -25,14 +25,11 @@ const Hero = () => {
   const classes = useStyles()
 
   return (
-    <Grid item container md={8}>
+    <Grid item container md={8} sm={10} spacing={4}>
       <Paper className={classes.paper} elevation={0}>
         <Grid container direction="column" alignItems="center" spacing={1}>
           <Grid item>
-            <Avatar
-              className={classes.avatar}
-              src="../images/Avatar_Yue_BW.JPG"
-            ></Avatar>
+            <Avatar className={classes.avatar} src={AvatarImg}></Avatar>
           </Grid>
           <Grid item>
             <Breadcrumbs>

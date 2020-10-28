@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
   },
   header: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(4),
   },
   footer: {
     padding: theme.spacing(2),

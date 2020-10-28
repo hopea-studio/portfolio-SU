@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, CardMedia, Chip, Grid, Paper, Typography } from "@material-ui/core"
+import { Box, Button, Card, CardContent, Chip, Grid, Paper, Typography } from "@material-ui/core"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"

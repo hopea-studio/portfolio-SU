@@ -1,7 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import { Card,  Grid, Paper, Typography } from "@material-ui/core"
+import { Card, Grid, Paper, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "../components/Link"
 import Image from "gatsby-image"
@@ -14,9 +13,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Portfolios = () => {
-  const classes = useStyles()
-
-  const projects =[]
+  const projects = []
 
   return (
     <Layout>
@@ -46,5 +43,3 @@ const Portfolios = () => {
     </Layout>
   )
 }
-
-

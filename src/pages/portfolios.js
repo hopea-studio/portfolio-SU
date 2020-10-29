@@ -43,3 +43,5 @@ const Portfolios = () => {
     </Layout>
   )
 }
+
+export default Portfolios

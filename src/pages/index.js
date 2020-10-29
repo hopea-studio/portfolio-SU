@@ -11,7 +11,7 @@ export default function Index({ data }) {
     <Layout>
       <Hero />
       <About data={data} />
-      <Portfolio />
+      <Portfolio data={data} />
       <Resume />
       <Contact />
     </Layout>

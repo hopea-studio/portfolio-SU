@@ -56,7 +56,7 @@ const Particles = () => {
           },
           size: {
             random: true,
-            value: 4,
+            value: 2,
           },
         },
         detectRetina: true,

@@ -1,4 +1,13 @@
-import { Box, Button, Card, CardContent, Chip, Grid, Paper, Typography } from "@material-ui/core"
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Chip,
+  Grid,
+  Paper,
+  Typography,
+} from "@material-ui/core"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
@@ -13,8 +22,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
   },
   cover: {
-      width: 180,
-      height: 180,
+    width: 180,
+    height: 180,
   },
   chip: {
     fontSize: "0.75rem",
@@ -22,10 +31,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Portfolio = () => {
+const Portfolio = (props) => {
   const classes = useStyles()
 
-const recent= []
+  const {
+    recent: { nodes: recent },
+  } = props.data
 
   return (
     <Grid
@@ -54,10 +65,7 @@ const recent= []
             <Grid item key={i.id}>
               <Paper>
                 <Card className={classes.card}>
-                  <Image
-                    fluid={i.cover.fluid}
-                    className={classes.cover}
-                  />
+                  <Image fluid={i.cover.fluid} className={classes.cover} />
                   <CardContent>
                     <Typography>{i.title}</Typography>
                     <Typography>{i.intro.internal.content}</Typography>

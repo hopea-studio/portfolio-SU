@@ -18,8 +18,9 @@
     "react": "latest",
     "react-dom": "latest",
     "react-helmet": "latest",
-    "react-tsparticles": "^1.17.12",
-    "react-markdown": "latest"
+    "react-markdown": "latest",
+    "react-spring": "^8.0.27",
+    "react-tsparticles": "^1.17.12"
   },
   "scripts": {
     "develop": "gatsby develop",

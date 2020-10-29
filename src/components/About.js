@@ -6,13 +6,18 @@ const useStyles = makeStyles((theme) => ({
   card: {
     //backgroundColor: theme.palette.grey[50],
     height: 240,
+    border: "3px solid grey",
+    padding: "5px",
   },
 }))
 
-const About = () => {
-  const about = []
+const About = (props) => {
+  const {
+    about: { nodes: about },
+  } = props.data
 
   const classes = useStyles()
+
   return (
     <Grid
       item
@@ -24,7 +29,7 @@ const About = () => {
       id="about"
     >
       <Grid item>
-        <Typography variant="h4">About Me</Typography>
+        <Typography variant="h4">Skills</Typography>
       </Grid>
       <Grid item container spacing={2}>
         {about.map((i) => {
@@ -35,18 +40,25 @@ const About = () => {
                 className={classes.card}
                 style={{ backgroundColor: `${i.backgroundColor}` }}
               >
-                <Typography>{i.title}</Typography>
-                <Avatar src={i.icon.fluid.src} variant="circle" />
-                {i.points.map((item) => {
-                  return (
-                    <Chip
-                      key={item}
-                      avatar={<Avatar>{item[0]}</Avatar>}
-                      label={item}
-                      variant="outlined"
-                    />
-                  )
-                })}
+                <Grid container direction="column" spacing={1}>
+                  <Grid item>
+                    <Typography variant="subtitle1" align="center">
+                      {i.title}
+                    </Typography>
+                  </Grid>
+                  {/* <Avatar src={i.icon.fluid.src} variant="circle" /> */}
+                  {i.points.map((item) => {
+                    return (
+                      <Grid item key={item}>
+                        <Chip
+                          avatar={<Avatar>{item[0]}</Avatar>}
+                          label={item}
+                          variant="outlined"
+                        />
+                      </Grid>
+                    )
+                  })}
+                </Grid>
               </Paper>
             </Grid>
           )

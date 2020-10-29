@@ -13,12 +13,12 @@
     "gatsby-plugin-material-ui": "latest",
     "gatsby-plugin-react-helmet": "latest",
     "gatsby-plugin-sharp": "^2.6.27",
+    "gatsby-source-contentful": "^2.3.46",
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-transformer-sharp": "^2.5.13",
     "react": "latest",
     "react-dom": "latest",
     "react-helmet": "latest",
-    "react-markdown": "latest",
     "react-spring": "^8.0.27",
     "react-tsparticles": "^1.17.12"
   },

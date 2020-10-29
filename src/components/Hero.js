@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     width: "100%",
+    border: "3px solid grey",
   },
 }))
 

@@ -66,25 +66,41 @@ const Portfolio = (props) => {
                 <Card className={classes.card}>
                   <Image fluid={i.cover.fluid} className={classes.cover} />
                   <CardContent>
-                    <Typography>{i.title}</Typography>
-                    <Typography>{i.intro.internal.content}</Typography>
-                    <Box display="flex" flexWrap="wrap" mt={1}>
-                      {i.skills.map((i) => {
-                        return (
-                          <Chip
-                            key={i}
-                            className={classes.chip}
-                            label={i}
-                            color="primary"
-                            size="small"
-                            variant="outlined"
-                          ></Chip>
-                        )
-                      })}
-                    </Box>
-                    <Button variant="contained">
-                      <Link to={`/portfolios/${i.Slug}`}>Gallary</Link>
-                    </Button>
+                    <Grid container spacing={1} direction="column">
+                      <Grid item>
+                        <Typography>{i.title}</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography>{i.intro.internal.content}</Typography>
+                      </Grid>
+                      <Grid item container spacing={1}>
+                        {i.skills.map((i) => {
+                          return (
+                            <Grid item key={i}>
+                              <Chip
+                                className={classes.chip}
+                                label={i}
+                                color="primary"
+                                size="small"
+                                variant="outlined"
+                              ></Chip>
+                            </Grid>
+                          )
+                        })}
+                      </Grid>
+                      <Grid item container spacing={1}>
+                        <Grid item>
+                          <Button variant="contained">
+                            <Link to={`/portfolios/${i.Slug}`}>Visit</Link>
+                          </Button>
+                        </Grid>
+                        <Grid item>
+                          <Button variant="contained">
+                            <Link to={`/portfolios/${i.Slug}`}>Visit</Link>
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </Grid>
                   </CardContent>
                 </Card>
               </Paper>

@@ -1,16 +1,15 @@
-import { Box, CardMedia, Container, Grid, Typography } from "@material-ui/core"
+import { CardMedia, Container, Grid, Typography } from "@material-ui/core"
 import React from "react"
 import logo from "../images/logoblack.png"
 import { makeStyles } from "@material-ui/core/styles"
 import Particles from "./Particles"
-import Image from "gatsby-image"
 
 const useStyles = makeStyles((theme) => ({
   container: {
     position: "absolute",
   },
   header: {
-    padding: theme.spacing(4),
+    padding: theme.spacing(1),
   },
   logo: {
     height: "100%",

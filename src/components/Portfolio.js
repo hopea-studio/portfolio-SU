@@ -18,8 +18,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   projects: {
-    border: "2px solid grey",
-    borderRadius: "10px",
+    border: "3px solid grey",
   },
   cover: {
     width: 180,

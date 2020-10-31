@@ -25,16 +25,18 @@ const About = (props) => {
       direction="column"
       alignItems="center"
       md={10}
+      xs={12}
       spacing={4}
       id="about"
     >
       <Grid item>
         <Typography variant="h4">Skills</Typography>
       </Grid>
+
       <Grid item container spacing={2}>
         {about.map((i) => {
           return (
-            <Grid item md={3} sm={6} xs={12} key={i.id}>
+            <Grid item sm={3} xs={6} key={i.id}>
               <Paper
                 elevation={1}
                 className={classes.card}

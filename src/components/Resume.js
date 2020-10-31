@@ -5,8 +5,8 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-        height: "100%",
-      minHeight:100,
+    height: "100%",
+    minHeight: 100,
   },
   resume: {
     border: "2px solid grey",
@@ -17,7 +17,14 @@ const useStyles = makeStyles((theme) => ({
 const Resume = () => {
   const classes = useStyles()
   return (
-    <Grid item container direction="column" alignItems="center" spacing={4} id="resume">
+    <Grid
+      item
+      container
+      direction="column"
+      alignItems="center"
+      spacing={4}
+      id="resume"
+    >
       <Grid item>
         <Typography variant="h4">Timeline</Typography>
       </Grid>
@@ -37,10 +44,6 @@ const Resume = () => {
         </Grid>
         <Grid item md={6} xs={12}>
           <Paper className={classes.paper}>Education</Paper>
-        </Grid>
-        <Grid item container justify="flex-end">
-          <Grid item>Button 1</Grid>
-          <Grid item>Button 2</Grid>
         </Grid>
       </Grid>
     </Grid>

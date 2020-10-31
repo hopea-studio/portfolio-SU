@@ -1,8 +1,9 @@
-import { Container, Grid, Typography } from "@material-ui/core"
+import { Box, CardMedia, Container, Grid, Typography } from "@material-ui/core"
 import React from "react"
-
+import logo from "../images/logoblack.png"
 import { makeStyles } from "@material-ui/core/styles"
 import Particles from "./Particles"
+import Image from "gatsby-image"
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -10,6 +11,10 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     padding: theme.spacing(4),
+  },
+  logo: {
+    height: "100%",
+    width: "18rem",
   },
   footer: {
     padding: theme.spacing(2),
@@ -24,7 +29,7 @@ const Layout = ({ children }) => {
       <Particles />
       <Grid container justify="center">
         <Grid item className={classes.header}>
-          <Typography variant="h2">YUE SU</Typography>
+          <CardMedia src={logo} component="img" className={classes.logo} />
         </Grid>
       </Grid>
       <Grid container direction="column" alignItems="center" spacing={10}>

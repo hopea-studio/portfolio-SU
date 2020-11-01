@@ -1,4 +1,12 @@
-import { Grid, Avatar, Breadcrumbs, IconButton, Paper } from "@material-ui/core"
+import {
+  Grid,
+  Avatar,
+  Breadcrumbs,
+  IconButton,
+  Paper,
+  Typography,
+  Button,
+} from "@material-ui/core"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
@@ -10,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     width: theme.spacing(15),
     height: theme.spacing(15),
-    margin: theme.spacing(6),
+    margin: theme.spacing(2),
   },
   title: {
     marginTop: 12,
@@ -33,18 +41,21 @@ const Hero = () => {
             <Avatar className={classes.avatar} src={AvatarImg}></Avatar>
           </Grid>
           <Grid item>
+            <Typography>Web Developer</Typography>
+          </Grid>
+          <Grid item>
             <Breadcrumbs>
               <Link color="textPrimary" to="#about">
-                About
+                <Button>Skills</Button>
               </Link>
               <Link color="textPrimary" to="#portfolio">
-                Portfolio
+                <Button>Portfolio</Button>
               </Link>
               <Link color="textPrimary" to="#resume">
-                Timeline
+                <Button>Timeline</Button>
               </Link>
               <Link color="textPrimary" to="#contact">
-                Contact
+                <Button>Contact</Button>
               </Link>
             </Breadcrumbs>
           </Grid>

@@ -107,13 +107,6 @@ const Portfolio = (props) => {
             </Grid>
           )
         })}
-        <Grid item container justify="center">
-          <Grid item>
-            <Button variant="outlined">
-              <Link to="/portfolios/"> Get a full list of the portfolio</Link>
-            </Button>
-          </Grid>
-        </Grid>
       </Grid>
     </Grid>
   )

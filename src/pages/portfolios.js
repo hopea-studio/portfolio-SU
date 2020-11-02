@@ -29,9 +29,7 @@ const Portfolios = () => {
                     </Grid>
                     <Grid item>
                       <Typography>{i.title}</Typography>
-                      <Link to={`/portfolios/${i.Slug}`}>
-                        Check the full gallary
-                      </Link>
+                      <Link to={`/portfolios/${i.Slug}`}>Github Repo</Link>
                     </Grid>
                   </Grid>
                 </Card>

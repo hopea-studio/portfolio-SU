@@ -3,6 +3,7 @@ import React from "react"
 import logo from "../images/logoblack.png"
 import { makeStyles } from "@material-ui/core/styles"
 import Particles from "./Particles"
+import { useSpring, a } from "react-spring"
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -21,6 +22,12 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Layout = ({ children }) => {
+  const fade = useSpring({
+    opacity: 1,
+    width: "100%",
+    from: { opacity: 0, width: "10%" },
+    delay: 800,
+  })
   const classes = useStyles()
 
   return (
@@ -28,7 +35,9 @@ const Layout = ({ children }) => {
       <Particles />
       <Grid container justify="center">
         <Grid item className={classes.header}>
-          <CardMedia src={logo} component="img" className={classes.logo} />
+          <a.div style={fade}>
+            <CardMedia src={logo} component="img" className={classes.logo} />
+          </a.div>
         </Grid>
       </Grid>
       <Grid container direction="column" alignItems="center" spacing={10}>

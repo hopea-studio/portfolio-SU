@@ -20,10 +20,6 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(15),
     margin: theme.spacing(2),
   },
-  title: {
-    marginTop: 12,
-    marginLeft: 12,
-  },
   paper: {
     width: "100%",
     border: "3px solid grey",
@@ -34,49 +30,22 @@ const Hero = () => {
   const classes = useStyles()
 
   return (
-    <Grid item container md={8} sm={10} spacing={4}>
+    
       <Paper className={classes.paper} elevation={0}>
-        <Grid container direction="column" alignItems="center" spacing={1}>
+        <Grid
+          container
+          spacing={1}
+        >
           <Grid item>
             <Avatar className={classes.avatar} src={AvatarImg}></Avatar>
           </Grid>
           <Grid item>
             <Typography>Web Developer</Typography>
-          </Grid>
-          <Grid item>
-            <Breadcrumbs>
-              <Link color="textPrimary" to="#about">
-                <Button>Skills</Button>
-              </Link>
-              <Link color="textPrimary" to="#portfolio">
-                <Button>Portfolio</Button>
-              </Link>
-              <Link color="textPrimary" to="#resume">
-                <Button>Timeline</Button>
-              </Link>
-              <Link color="textPrimary" to="#contact">
-                <Button>Contact</Button>
-              </Link>
-            </Breadcrumbs>
-          </Grid>
-          <Grid item spacing={2}>
-            <Link to="https://www.linkedin.com/in/suxyue/" target="_blank">
-              <IconButton>
-                <LinkedInIcon color="primary" />
-              </IconButton>
-            </Link>
-            <Link to="https://github.com/yue-su/" target="_blank">
-              <IconButton>
-                <GitHubIcon color="secondary" />
-              </IconButton>
-            </Link>
-            <IconButton>
-              <LinkedInIcon color="error" />
-            </IconButton>
+            <Typography>Site is still under development!</Typography>
           </Grid>
         </Grid>
       </Paper>
-    </Grid>
+    
   )
 }
 

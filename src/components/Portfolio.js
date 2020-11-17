@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Card,
   CardContent,
@@ -31,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Portfolio = (props) => {
+
   const classes = useStyles()
 
   const {
@@ -42,8 +42,6 @@ const Portfolio = (props) => {
       item
       container
       direction="column"
-      alignItems="center"
-      spacing={4}
       id="portfolio"
     >
       <Grid item>
@@ -53,10 +51,6 @@ const Portfolio = (props) => {
         item
         container
         direction="column"
-        spacing={2}
-        md={8}
-        sm={10}
-        xs={12}
         className={classes.projects}
       >
         {recent.map((i) => {

@@ -10,8 +10,8 @@ export default function Index({ data }) {
   return (
     <Layout>
       <Hero />
-      <About data={data} />
       <Portfolio data={data} />
+      <About data={data} />
       <Resume />
       <Contact />
     </Layout>

@@ -4,20 +4,17 @@ import logo from "../images/logoblack.png"
 import { makeStyles } from "@material-ui/core/styles"
 import Particles from "./Particles"
 import { useSpring, a } from "react-spring"
+import Nav from "./Nav"
+
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    position: "absolute",
-  },
   header: {
-    padding: theme.spacing(1),
+    borderBottom: '1px solid black'
   },
   logo: {
-    height: "100%",
     width: "18rem",
   },
-  footer: {
-    padding: theme.spacing(2),
+  footer: { 
   },
 }))
 
@@ -31,24 +28,25 @@ const Layout = ({ children }) => {
   const classes = useStyles()
 
   return (
-    <Container maxWidth="xl" className={classes.container}>
+    <Grid container>
       <Particles />
-      <Grid container justify="center">
+      <Grid item sm={1}>
+        <Nav />
+      </Grid>
+      <Grid item container sm={11} direction="column" justify="center">
         <Grid item className={classes.header}>
           <a.div style={fade}>
             <CardMedia src={logo} component="img" className={classes.logo} />
           </a.div>
         </Grid>
-      </Grid>
-      <Grid container direction="column" alignItems="center" spacing={10}>
-        {children}
-      </Grid>
-      <Grid container justify="center">
+        <Grid item container direction="column">
+          {children}
+        </Grid>
         <Grid item className={classes.footer}>
           <Typography variant="h6">Footer</Typography>
         </Grid>
       </Grid>
-    </Container>
+    </Grid>
   )
 }
 

@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   card: {
     //backgroundColor: theme.palette.grey[50],
     height: 240,
-    border: "3px solid grey",
+    border: "1px solid grey",
     padding: "5px",
   },
 }))
@@ -24,15 +24,11 @@ const About = (props) => {
       container
       direction="column"
       alignItems="center"
-      md={10}
-      xs={12}
-      spacing={4}
       id="about"
     >
       <Grid item>
         <Typography variant="h4">Skills</Typography>
       </Grid>
-
       <Grid item container spacing={2}>
         {about.map((i) => {
           return (

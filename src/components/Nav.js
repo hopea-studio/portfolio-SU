@@ -1,4 +1,4 @@
-import {  Grid,  Typography, Link as MuiLink } from "@material-ui/core"
+import { Grid, Typography, Link as MuiLink } from "@material-ui/core"
 import React from "react"
 import Link from "./Link"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
@@ -9,15 +9,14 @@ const useStyles = makeStyles((theme) => ({
   sidebar: {
     height: "110vh",
     position: "fixed",
-    width: "2.5vw",
+    width: "3vw",
     borderRight: "1px solid black",
-    paddingTop: '10px'
+    paddingTop: "25px",
   },
 
   nav: {
     writingMode: "vertical-rl",
     textOrientation: "mixed",
-    
   },
 }))
 
@@ -33,10 +32,15 @@ const Nav = () => {
         alignItems="center"
         justify="center"
         direction="column"
-        spacing={3}
+        spacing={5}
       >
         <Grid item>
-          <Link color="textPrimary" to="#about">
+          <Link color="textPrimary" to="/">
+            <Typography>Home</Typography>
+          </Link>
+        </Grid>
+        <Grid item>
+          <Link color="textPrimary" to="#hero">
             <Typography>Skills</Typography>
           </Link>
         </Grid>

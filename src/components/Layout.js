@@ -6,10 +6,9 @@ import Particles from "./Particles"
 import { useSpring, a } from "react-spring"
 import Nav from "./Nav"
 
-
 const useStyles = makeStyles((theme) => ({
   main: {
-    paddingLeft: "2.5vw",
+    paddingLeft: "3vw",
   },
   header: {
     borderBottom: "1px solid black",
@@ -17,7 +16,9 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     width: "18rem",
   },
-  footer: {},
+  footer: {
+    borderTop: "1px solid black",
+  },
 }))
 
 const Layout = ({ children }) => {
@@ -31,16 +32,16 @@ const Layout = ({ children }) => {
   return (
     <Grid container xs={12}>
       <Particles />
-        <Hidden smDown>
-          <Nav />
-        </Hidden>
+      <Hidden smDown>
+        <Nav />
+      </Hidden>
       <Grid item container direction="column" className={classes.main}>
-        <Grid item container className={classes.header} justify='center'>
+        <Grid item container className={classes.header} justify="center">
           <a.div style={fade}>
             <CardMedia src={logo} component="img" className={classes.logo} />
           </a.div>
         </Grid>
-        <Grid item container direction="column">
+        <Grid item container direction="column" alignItems="center">
           {children}
         </Grid>
         <Grid item className={classes.footer}>

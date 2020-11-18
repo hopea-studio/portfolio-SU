@@ -3,47 +3,26 @@ import React from "react"
 
 import { makeStyles } from "@material-ui/core/styles"
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    height: "100%",
-    minHeight: 100,
-  },
-  resume: {
-    border: "2px solid grey",
-    borderRadius: "10px",
-  },
-}))
+const useStyles = makeStyles((theme) => ({}))
 
 const Resume = () => {
   const classes = useStyles()
   return (
-    <Grid
-      item
-      container
-      direction="column"
-      alignItems="center"
-      spacing={4}
-      id="resume"
-    >
-      <Grid item>
-        <Typography variant="h4">Timeline</Typography>
-      </Grid>
-
-      <Grid
-        item
-        container
-        spacing={2}
-        md={8}
-        sm={10}
-        xs={12}
-        className={classes.resume}
-        justify="center"
-      >
-        <Grid item md={6} xs={12}>
-          <Paper className={classes.paper}>Working History</Paper>
+    <Grid item container id="resume" xs={12}>
+      <Grid item container lg={6}>
+        <Grid item lg={4}>
+          <Typography>Work Experience</Typography>
         </Grid>
-        <Grid item md={6} xs={12}>
-          <Paper className={classes.paper}>Education</Paper>
+        <Grid item container lg={8}>
+          {}
+        </Grid>
+      </Grid>
+      <Grid item container lg={6}>
+        <Grid item container lg={8}>
+          {}
+        </Grid>
+        <Grid item lg={4}>
+          Education
         </Grid>
       </Grid>
     </Grid>

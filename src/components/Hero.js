@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(15),
     borderBottom: "1px solid black",
   },
-  left: {},
   avatar: {
     width: theme.spacing(20),
     height: theme.spacing(20),
@@ -58,9 +57,9 @@ const Hero = (props) => {
 
   const classes = useStyles()
 
-  //here the xs={12} and item property has to be added, as it has a parent Grid container
+  //here the item property has to be added, as it has a parent Grid container
   return (
-    <Grid item container className={classes.hero} spacing={2} xs={12} id="hero">
+    <Grid item container className={classes.hero} spacing={2} id="hero">
       <Grid
         lg={4}
         item

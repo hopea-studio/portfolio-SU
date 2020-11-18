@@ -10,20 +10,14 @@ const useStyles = makeStyles((theme) => ({
     height: "110vh",
     position: "fixed",
     width: "2.5vw",
-        borderRight: "1px solid black",
+    borderRight: "1px solid black",
     paddingTop: '10px'
   },
 
   nav: {
     writingMode: "vertical-rl",
     textOrientation: "mixed",
-  },
-
-  icons: {
-      position: 'fixed',
-      top: '50vh',
-      left: "5px",
-      transform: "translate(0, -50%)"
+    
   },
 }))
 
@@ -61,14 +55,6 @@ const Nav = () => {
             <Typography>Contact</Typography>
           </Link>
         </Grid>
-      </Grid>
-      <Grid
-        item
-        container
-        className={classes.icons}
-              direction="column"
-              spacing={2}
-      >
         <Grid item>
           <Link to="https://www.linkedin.com/in/suxyue/" target="_blank">
             <LinkedInIcon />
@@ -76,7 +62,7 @@ const Nav = () => {
         </Grid>
         <Grid item>
           <Link to="https://github.com/yue-su/" target="_blank">
-              <GitHubIcon />
+            <GitHubIcon />
           </Link>
         </Grid>
       </Grid>

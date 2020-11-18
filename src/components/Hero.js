@@ -9,11 +9,12 @@ import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
 import AvatarImg from "../images/Avatar.jpg"
+import { red, blueGrey, grey, deepPurple } from "@material-ui/core/colors"
 
 const useStyles = makeStyles((theme) => ({
   hero: {
     paddingTop: theme.spacing(10),
-    paddingBottom: theme.spacing(10)
+    paddingBottom: theme.spacing(10),
   },
   avatar: {
     width: theme.spacing(15),
@@ -27,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
     //backgroundColor: theme.palette.grey[50],
     height: 440,
     padding: "5px",
+    border: "1px solid black",
+    backgroundColor: 'transparent',
   },
 }))
 
@@ -62,9 +65,8 @@ const Hero = (props) => {
           return (
             <Grid item sm={3} xs={6} key={i.id}>
               <Paper
-                elevation={1}
+                elevation={0}
                 className={classes.card}
-                style={{ backgroundColor: `${i.backgroundColor}` }}
               >
                 <Grid container direction="column" spacing={1}>
                   <Grid item>

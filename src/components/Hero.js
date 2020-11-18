@@ -1,20 +1,20 @@
 import {
   Grid,
   Avatar,
-  Breadcrumbs,
-  IconButton,
   Paper,
   Typography,
-  Button,
+  Chip,
 } from "@material-ui/core"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
-import LinkedInIcon from "@material-ui/icons/LinkedIn"
-import GitHubIcon from "@material-ui/icons/GitHub"
 import AvatarImg from "../images/Avatar.jpg"
 
 const useStyles = makeStyles((theme) => ({
+  hero: {
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(10)
+  },
   avatar: {
     width: theme.spacing(15),
     height: theme.spacing(15),
@@ -22,30 +22,75 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     width: "100%",
-    border: "3px solid grey",
+  },
+  card: {
+    //backgroundColor: theme.palette.grey[50],
+    height: 440,
+    padding: "5px",
   },
 }))
 
-const Hero = () => {
+const Hero = (props) => {
+  const {
+    about: { nodes: about },
+  } = props.data
+
   const classes = useStyles()
 
   return (
-    
-      <Paper className={classes.paper} elevation={0}>
+    <Grid container className={classes.hero}>
         <Grid
+          lg={4}
+          item
           container
-          spacing={1}
+          direction="column"
+          justify="center"
+          alignItems="center"
         >
           <Grid item>
             <Avatar className={classes.avatar} src={AvatarImg}></Avatar>
           </Grid>
           <Grid item>
             <Typography>Web Developer</Typography>
-            <Typography>Site is still under development!</Typography>
+          </Grid>
+          <Grid item>
+            <Typography>This site is still under development!</Typography>
           </Grid>
         </Grid>
-      </Paper>
-    
+      <Grid item container lg={8} spacing={2}>
+        {about.map((i) => {
+          return (
+            <Grid item sm={3} xs={6} key={i.id}>
+              <Paper
+                elevation={1}
+                className={classes.card}
+                style={{ backgroundColor: `${i.backgroundColor}` }}
+              >
+                <Grid container direction="column" spacing={1}>
+                  <Grid item>
+                    <Typography variant="subtitle1" align="center">
+                      {i.title}
+                    </Typography>
+                  </Grid>
+                  {/* <Avatar src={i.icon.fluid.src} variant="circle" /> */}
+                  {i.points.map((item) => {
+                    return (
+                      <Grid item key={item}>
+                        <Chip
+                          avatar={<Avatar>{item[0]}</Avatar>}
+                          label={item}
+                          variant="outlined"
+                        />
+                      </Grid>
+                    )
+                  })}
+                </Grid>
+              </Paper>
+            </Grid>
+          )
+        })}
+      </Grid>
+    </Grid>
   )
 }
 

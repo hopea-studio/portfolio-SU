@@ -1,4 +1,4 @@
-import { CardMedia, Container, Grid, Typography } from "@material-ui/core"
+import { CardMedia, Container, Grid, Hidden, Typography } from "@material-ui/core"
 import React from "react"
 import logo from "../images/logoblack.png"
 import { makeStyles } from "@material-ui/core/styles"
@@ -8,33 +8,34 @@ import Nav from "./Nav"
 
 
 const useStyles = makeStyles((theme) => ({
+  main: {
+    paddingLeft: "2.5vw",
+  },
   header: {
-    borderBottom: '1px solid black'
+    borderBottom: "1px solid black",
   },
   logo: {
     width: "18rem",
   },
-  footer: { 
-  },
+  footer: {},
 }))
 
 const Layout = ({ children }) => {
   const fade = useSpring({
     opacity: 1,
-    width: "100%",
-    from: { opacity: 0, width: "10%" },
+    from: { opacity: 0 },
     delay: 800,
   })
   const classes = useStyles()
 
   return (
-    <Grid container>
+    <Grid container xs={12}>
       <Particles />
-      <Grid item sm={1}>
-        <Nav />
-      </Grid>
-      <Grid item container sm={11} direction="column" justify="center">
-        <Grid item className={classes.header}>
+        <Hidden smDown>
+          <Nav />
+        </Hidden>
+      <Grid item container direction="column" className={classes.main}>
+        <Grid item container className={classes.header} justify='center'>
           <a.div style={fade}>
             <CardMedia src={logo} component="img" className={classes.logo} />
           </a.div>

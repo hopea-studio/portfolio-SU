@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   projects: {
-    border: "3px solid grey",
+    borderTop: '1px solid black',
   },
   cover: {
     width: 180,
@@ -38,19 +38,12 @@ const Portfolio = (props) => {
   } = props.data
 
   return (
-    <Grid
-      item
-      container
-      direction="column"
-      id="portfolio"
-    >
-      <Grid item>
-        <Typography variant="h4">Portfolio</Typography>
-      </Grid>
+    
       <Grid
         item
         container
         direction="column"
+        id="portfolio"
         className={classes.projects}
       >
         {recent.map((i) => {
@@ -102,7 +95,7 @@ const Portfolio = (props) => {
           )
         })}
       </Grid>
-    </Grid>
+    
   )
 }
 

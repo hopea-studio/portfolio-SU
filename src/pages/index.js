@@ -9,9 +9,8 @@ import Contact from "../components/Contact"
 export default function Index({ data }) {
   return (
     <Layout>
-      <Hero />
+      <Hero data={data} />
       <Portfolio data={data} />
-      <About data={data} />
       <Resume />
       <Contact />
     </Layout>

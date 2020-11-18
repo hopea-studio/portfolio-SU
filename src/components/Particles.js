@@ -1,6 +1,7 @@
 import React from "react"
 import ParticlesJS from "react-tsparticles"
 import { makeStyles } from "@material-ui/core/styles"
+import { grey } from "@material-ui/core/colors"
 
 const useStyles = makeStyles((theme) => ({
   particles: {
@@ -22,7 +23,7 @@ const Particles = () => {
       options={{
         background: {
           color: {
-            value: "#f5f5f5",
+            value: grey[100],
           },
         },
         fpsLimit: 60,

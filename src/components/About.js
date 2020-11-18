@@ -30,37 +30,7 @@ const About = (props) => {
         <Typography variant="h4">Skills</Typography>
       </Grid>
       <Grid item container spacing={2}>
-        {about.map((i) => {
-          return (
-            <Grid item sm={3} xs={6} key={i.id}>
-              <Paper
-                elevation={1}
-                className={classes.card}
-                style={{ backgroundColor: `${i.backgroundColor}` }}
-              >
-                <Grid container direction="column" spacing={1}>
-                  <Grid item>
-                    <Typography variant="subtitle1" align="center">
-                      {i.title}
-                    </Typography>
-                  </Grid>
-                  {/* <Avatar src={i.icon.fluid.src} variant="circle" /> */}
-                  {i.points.map((item) => {
-                    return (
-                      <Grid item key={item}>
-                        <Chip
-                          avatar={<Avatar>{item[0]}</Avatar>}
-                          label={item}
-                          variant="outlined"
-                        />
-                      </Grid>
-                    )
-                  })}
-                </Grid>
-              </Paper>
-            </Grid>
-          )
-        })}
+        
       </Grid>
     </Grid>
   )

@@ -17,7 +17,7 @@ const theme = createMuiTheme({
       main: red.A400,
     },
     background: {
-      default: grey[200],
+      default: grey[50],
     },
   },
   typography: {

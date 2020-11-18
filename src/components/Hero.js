@@ -38,7 +38,7 @@ const Hero = (props) => {
   const classes = useStyles()
 
   return (
-    <Grid container className={classes.hero}>
+    <Grid container className={classes.hero} spacing={2}>
         <Grid
           lg={4}
           item

@@ -1,4 +1,4 @@
-import {  Grid,  Typography } from "@material-ui/core"
+import {  Grid,  Typography, Link as MuiLink } from "@material-ui/core"
 import React from "react"
 import Link from "./Link"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
@@ -56,14 +56,14 @@ const Nav = () => {
           </Link>
         </Grid>
         <Grid item>
-          <Link to="https://www.linkedin.com/in/suxyue/" target="_blank">
+          <MuiLink href="https://www.linkedin.com/in/suxyue/" target="_blank">
             <LinkedInIcon />
-          </Link>
+          </MuiLink>
         </Grid>
         <Grid item>
-          <Link to="https://github.com/yue-su/" target="_blank">
+          <MuiLink href="https://github.com/yue-su/" target="_blank">
             <GitHubIcon />
-          </Link>
+          </MuiLink>
         </Grid>
       </Grid>
     </Grid>

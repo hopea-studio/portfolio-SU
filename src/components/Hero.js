@@ -1,15 +1,23 @@
 import {
   Grid,
   Avatar,
-  Paper,
   Typography,
   Chip,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
 } from "@material-ui/core"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import Link from "./Link"
 import AvatarImg from "../images/Avatar.jpg"
-import { red, blueGrey, grey, deepPurple } from "@material-ui/core/colors"
+import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined"
+import MailOutlineOutlinedIcon from "@material-ui/icons/MailOutlineOutlined"
+import PermIdentityIcon from "@material-ui/icons/PermIdentity"
+
+function ListItemLink(props) {
+  return <ListItem button component="a" {...props} />
+}
 
 const useStyles = makeStyles((theme) => ({
   hero: {
@@ -17,19 +25,19 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(10),
   },
   avatar: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
+    width: theme.spacing(20),
+    height: theme.spacing(20),
     margin: theme.spacing(2),
-  },
-  paper: {
-    width: "100%",
   },
   card: {
     //backgroundColor: theme.palette.grey[50],
     height: 440,
-    padding: "5px",
-    border: "1px solid black",
-    backgroundColor: 'transparent',
+  },
+  title: {
+    height: "40%",
+    display: 'flex',
+    alignItems: 'center',
+    borderBottom: '1px solid lightGrey',  
   },
 }))
 
@@ -42,52 +50,76 @@ const Hero = (props) => {
 
   return (
     <Grid container className={classes.hero} spacing={2}>
-        <Grid
-          lg={4}
-          item
-          container
-          direction="column"
-          justify="center"
-          alignItems="center"
-        >
-          <Grid item>
-            <Avatar className={classes.avatar} src={AvatarImg}></Avatar>
-          </Grid>
-          <Grid item>
-            <Typography>Web Developer</Typography>
-          </Grid>
-          <Grid item>
-            <Typography>This site is still under development!</Typography>
-          </Grid>
+      <Grid
+        lg={4}
+        item
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+      >
+        <Grid item>
+          <Avatar className={classes.avatar} src={AvatarImg}></Avatar>
         </Grid>
+        <Grid item>
+          <List dense>
+            <ListItem>
+              <ListItemIcon>
+                <PermIdentityIcon />
+              </ListItemIcon>
+              <ListItemText>
+                <Typography variant="h5">Web Developer</Typography>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <LocationOnOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText>
+                <Typography>NS, CANADA</Typography>
+              </ListItemText>
+            </ListItem>
+            <ListItemLink href="mailto:su2047@gmail.com" target="_blank">
+              <ListItemIcon>
+                <MailOutlineOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText>
+                <Typography>su2047@gmail.com</Typography>
+              </ListItemText>
+            </ListItemLink>
+          </List>
+        </Grid>
+      </Grid>
       <Grid item container lg={8} spacing={2}>
         {about.map((i) => {
           return (
-            <Grid item sm={3} xs={6} key={i.id}>
-              <Paper
-                elevation={0}
-                className={classes.card}
-              >
-                <Grid container direction="column" spacing={1}>
-                  <Grid item>
-                    <Typography variant="subtitle1" align="center">
-                      {i.title}
-                    </Typography>
-                  </Grid>
-                  {/* <Avatar src={i.icon.fluid.src} variant="circle" /> */}
-                  {i.points.map((item) => {
-                    return (
-                      <Grid item key={item}>
-                        <Chip
-                          avatar={<Avatar>{item[0]}</Avatar>}
-                          label={item}
-                          variant="outlined"
-                        />
-                      </Grid>
-                    )
-                  })}
-                </Grid>
-              </Paper>
+            <Grid
+              item
+              sm={3}
+              xs={6}
+              key={i.id}
+              container
+              direction="column"
+              spacing={2}
+              className={classes.card}
+            >
+              <Grid item className={classes.title}>
+                <Typography variant="h5">{i.title}</Typography>
+              </Grid>
+              <Grid item container direction='column' spacing={1}>
+                {i.points.map((item, index) => {
+                  return (
+                    <Grid item key={index}>
+                      <Chip
+                        avatar={<Avatar>{item[0]}</Avatar>}
+                        label={item}
+                        variant="outlined"
+                      />
+                    </Grid>
+                  )
+                })}
+              </Grid>
+              {/* <Avatar src={i.icon.fluid.src} variant="circle" /> */}
             </Grid>
           )
         })}

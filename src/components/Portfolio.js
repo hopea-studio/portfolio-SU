@@ -1,9 +1,6 @@
 import {
   Box,
   Button,
-  Card,
-  CardContent,
-  CardMedia,
   Chip,
   Grid,
   Hidden,
@@ -12,7 +9,7 @@ import {
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
-import Image from "gatsby-image"
+//import Image from "gatsby-image"
 
 const useStyles = makeStyles((theme) => ({
   cover: {
@@ -44,7 +41,7 @@ const Portfolio = (props) => {
           <Grid item container key={i.id} spacing={2}>
             <Grid item lg={6} xs={12}>
               <Hidden xsDown>
-                <video autoPlay loop muted playsinline>
+                <video autoPlay loop muted playsInline>
                   <source src={i.cover.file.url} type="video/mp4" />
                 </video>
               </Hidden>

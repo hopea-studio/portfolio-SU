@@ -103,13 +103,13 @@ const Hero = (props) => {
           </Grid>
         </Grid>
         <Grid item container lg={8} spacing={2}>
-          {about.map((i) => {
+          {about.map((i, index) => {
             return (
               <Grid
                 item
                 sm={3}
                 xs={6}
-                key={i.id}
+                key={index}
                 container
                 direction="column"
                 spacing={2}

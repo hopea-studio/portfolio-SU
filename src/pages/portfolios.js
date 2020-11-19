@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Portfolios = () => {
+
+  const classes = useStyles()
+  
   const projects = []
 
   return (

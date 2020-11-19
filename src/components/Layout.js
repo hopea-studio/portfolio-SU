@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
         </Box>
       </Hidden>
       <Box className={classes.main}>
-        <Box className={classes.header}>
+        <Box className={classes.header} display='flex' justifyContent='center'>
           <a.div style={fade}>
             <CardMedia src={logo} component="img" className={classes.logo} />
           </a.div>

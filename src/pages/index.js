@@ -31,7 +31,7 @@ export const query = graphql`
         backgroundColor
       }
     }
-    recent: allContentfulDesignProject(
+    recent: allContentfulDevProject(
       limit: 3
       sort: { order: ASC, fields: contentfulid }
     ) {
@@ -47,8 +47,8 @@ export const query = graphql`
           }
         }
         cover {
-          fluid {
-            ...GatsbyContentfulFluid
+          file {
+            url
           }
         }
       }

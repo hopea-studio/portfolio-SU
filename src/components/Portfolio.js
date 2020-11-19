@@ -1,7 +1,9 @@
 import {
+  Box,
   Button,
   Card,
   CardContent,
+  CardMedia,
   Chip,
   Grid,
   Typography,
@@ -12,20 +14,11 @@ import Link from "./Link"
 import Image from "gatsby-image"
 
 const useStyles = makeStyles((theme) => ({
-  projects: {
-    paddingTop: theme.spacing(15),
-    paddingBottom: theme.spacing(15),
-  },
-  card: {
-    display: "flex",
-  },
   cover: {
-    borderTopLeftRadius: "10px",
-    borderBottomLeftRadius: "10px",
-    border: "1px solid black",
+   
   },
   chip: {
-    fontSize: "0.75rem",
+    fontSize: "1rem",
     marginRight: "2px",
   },
 }))
@@ -38,22 +31,22 @@ const Portfolio = (props) => {
   } = props.data
 
   return (
-    <Grid
-      item
-      container
-      direction="column"
+    <Box
       id="portfolio"
-      className={classes.projects}
-      lg={6}
-      spacing={4}
+      py={12}
+      display='flex'
+      justifyContent='center'
     >
+      <Grid container direction='column' lg={10}>
       {recent.map((i) => {
         return (
           <Grid item container key={i.id} spacing={2}>
-            <Grid item sm={5}>
-              <Image fluid={i.cover.fluid} className={classes.cover} />
+            <Grid item sm={6}>
+              <video autoPlay loop muted playsinline>
+                <source src={i.cover.file.url} type="video/mp4"/>
+              </video>
             </Grid>
-            <Grid item container sm={7} direction="column">
+            <Grid item container sm={6} direction="column">
               <Grid item>
                 <Typography>{i.title}</Typography>
               </Grid>
@@ -77,12 +70,12 @@ const Portfolio = (props) => {
               </Grid>
               <Grid item container spacing={1}>
                 <Grid item>
-                  <Button variant="contained">
+                  <Button>
                     <Link to={`/portfolios/${i.Slug}`}>Visit</Link>
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="contained">
+                  <Button>
                     <Link to={`/portfolios/${i.Slug}`}>Visit</Link>
                   </Button>
                 </Grid>
@@ -90,8 +83,8 @@ const Portfolio = (props) => {
             </Grid>
           </Grid>
         )
-      })}
-    </Grid>
+      })}</Grid>
+    </Box>
   )
 }
 

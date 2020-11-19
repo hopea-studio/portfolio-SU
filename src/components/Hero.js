@@ -2,7 +2,6 @@ import {
   Grid,
   Avatar,
   Typography,
-  Chip,
   List,
   ListItem,
   ListItemIcon,
@@ -15,7 +14,7 @@ import AvatarImg from "../images/Avatar.jpg"
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined"
 import MailOutlineOutlinedIcon from "@material-ui/icons/MailOutlineOutlined"
 import PermIdentityIcon from "@material-ui/icons/PermIdentity"
-import CheckIcon from "@material-ui/icons/Check"
+//import Image from "gatsby-image"
 
 function ListItemLink(props) {
   return <ListItem button component="a" {...props} />
@@ -39,16 +38,18 @@ const useStyles = makeStyles((theme) => ({
     //border: "1px solid black",
   },
   title: {
-    height: "40%",
+    height: "50%",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end'
   },
   content: {
     flexGrow: "1",
   },
-  underline: {
-    borderBottom: "2px solid lightGrey",
-    width: "80%",
-    height: "100%",
-  },
+  image: {
+    width: theme.spacing(10),
+    paddingBottom: theme.spacing(2)
+  }
 }))
 
 const Hero = (props) => {
@@ -115,14 +116,9 @@ const Hero = (props) => {
                 spacing={2}
                 className={classes.card}
               >
-                <Grid item container className={classes.title}>
-                  <Grid
-                    container
-                    className={classes.underline}
-                    alignItems="center"
-                  >
-                    <Typography variant="h5">{i.title}</Typography>
-                  </Grid>
+                <Grid item className={classes.title}>
+                  <img src={i.icon.file.url} className={classes.image} />
+                  <Typography variant="h5">{i.title}</Typography>
                 </Grid>
                 <Grid
                   item
@@ -135,11 +131,7 @@ const Hero = (props) => {
                   {i.points.map((item, index) => {
                     return (
                       <Grid item key={index}>
-                        <Chip
-                          avatar={<CheckIcon />}
-                          label={item}
-                          variant="outline"
-                        />
+                        <Typography>◾ {item}</Typography>
                       </Grid>
                     )
                   })}

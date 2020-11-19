@@ -24,8 +24,8 @@ export const query = graphql`
         contentfulid
         title
         icon {
-          fluid {
-            ...GatsbyContentfulFluid
+          file {
+            url
           }
         }
         points

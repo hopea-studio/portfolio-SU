@@ -22,6 +22,7 @@ const theme = createMuiTheme({
   },
   typography: {
     h5: { fontFamily: "'Zilla Slab', serif" },
+    subtitle1: {color: grey[700]}
   },
 })
 

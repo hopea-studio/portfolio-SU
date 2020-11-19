@@ -40,7 +40,7 @@ const Portfolio = (props) => {
                 <Box pt={2} pr={4}>
                   <Grid container direction="column" spacing={2}>
                     <Grid item>
-                      <Typography paragraph>{i.year}</Typography>
+                      <Typography paragraph variant='subtitle1'>{i.year}</Typography>
                     </Grid>
                     <Grid item>
                       <Typography variant="h5">{i.title}</Typography>

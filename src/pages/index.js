@@ -49,6 +49,10 @@ export const query = graphql`
         cover {
           file {
             url
+            contentType
+          }
+          fluid {
+            ...GatsbyContentfulFluid
           }
         }
       }

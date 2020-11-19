@@ -6,6 +6,7 @@ import {
   CardMedia,
   Chip,
   Grid,
+  Hidden,
   Typography,
 } from "@material-ui/core"
 import React from "react"
@@ -37,16 +38,18 @@ const Portfolio = (props) => {
       display='flex'
       justifyContent='center'
     >
-      <Grid container direction='column' lg={10} spacing={10}>
+      <Grid container direction='column' md={10} spacing={10}>
       {recent.map((i) => {
         return (
           <Grid item container key={i.id} spacing={2}>
-            <Grid item sm={6}>
-              <video autoPlay loop muted playsinline>
-                <source src={i.cover.file.url} type="video/mp4"/>
-              </video>
+            <Grid item lg={6} xs={12}>
+              <Hidden xsDown>
+                <video autoPlay loop muted playsinline>
+                  <source src={i.cover.file.url} type="video/mp4" />
+                </video>
+              </Hidden>
             </Grid>
-            <Grid item container sm={6} direction="column">
+            <Grid item container lg={6} xs={12} direction="column">
               <Grid item>
                 <Typography>{i.title}</Typography>
               </Grid>

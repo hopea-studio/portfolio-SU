@@ -4,6 +4,7 @@ import Hero from "../components/Hero"
 import Portfolio from "../components/Portfolio"
 import Resume from "../components/Resume"
 import Contact from "../components/Contact"
+import './index.css'
 
 export default function Index({ data }) {
   return (

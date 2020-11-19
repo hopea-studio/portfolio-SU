@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({}))
 const Resume = () => {
   const classes = useStyles()
   return (
-    <Grid item container id="resume" xs={12}>
+    <Grid item container id="resume">
       <Grid item container lg={6}>
         <Grid item lg={4}>
           <Typography>Work Experience</Typography>

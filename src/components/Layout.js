@@ -1,4 +1,4 @@
-import { CardMedia, Grid, Hidden, Typography } from "@material-ui/core"
+import { Box, CardMedia, Grid, Hidden, Typography } from "@material-ui/core"
 import React from "react"
 import logo from "../images/logoblack.png"
 import { makeStyles } from "@material-ui/core/styles"
@@ -7,8 +7,13 @@ import { useSpring, a } from "react-spring"
 import Nav from "./Nav"
 
 const useStyles = makeStyles((theme) => ({
+  nav: {
+    width: '4vw',
+    border: '1px solid black',
+    position: 'relative'
+  },
   main: {
-    paddingLeft: "3vw",
+    flexGrow: '1',
   },
   header: {
     borderBottom: "1px solid black",
@@ -30,25 +35,25 @@ const Layout = ({ children }) => {
   const classes = useStyles()
 
   return (
-    <Grid container xs={12}>
-      <Particles />
+    <Box display="flex">
       <Hidden smDown>
-        <Nav />
+        <Box className={classes.nav}>
+          <Particles />
+          <Nav />
+        </Box>
       </Hidden>
-      <Grid item container direction="column" className={classes.main}>
-        <Grid item container className={classes.header} justify="center">
+      <Box className={classes.main}>
+        <Box className={classes.header}>
           <a.div style={fade}>
             <CardMedia src={logo} component="img" className={classes.logo} />
           </a.div>
-        </Grid>
-        <Grid item container direction="column" alignItems="center">
-          {children}
-        </Grid>
-        <Grid item className={classes.footer}>
+        </Box>
+        <Box>{children}</Box>
+        <Box className={classes.footer}>
           <Typography variant="h6">Footer</Typography>
-        </Grid>
-      </Grid>
-    </Grid>
+        </Box>
+      </Box>
+    </Box>
   )
 }
 

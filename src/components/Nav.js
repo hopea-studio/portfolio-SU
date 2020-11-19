@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
     height: "110vh",
     position: "fixed",
     width: "3vw",
-    borderRight: "1px solid black",
     paddingTop: "25px",
   },
 

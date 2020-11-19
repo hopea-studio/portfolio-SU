@@ -7,6 +7,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Box,
 } from "@material-ui/core"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
@@ -59,95 +60,97 @@ const Hero = (props) => {
 
   //here the item property has to be added, as it has a parent Grid container
   return (
-    <Grid item container className={classes.hero} spacing={2} id="hero">
-      <Grid
-        lg={4}
-        item
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-      >
-        <Grid item>
-          <Avatar className={classes.avatar} src={AvatarImg}></Avatar>
+    <Box className={classes.hero}>
+      <Grid container spacing={2} id="hero">
+        <Grid
+          lg={4}
+          item
+          container
+          direction="column"
+          justify="center"
+          alignItems="center"
+        >
+          <Grid item>
+            <Avatar className={classes.avatar} src={AvatarImg}></Avatar>
+          </Grid>
+          <Grid item>
+            <List dense>
+              <ListItem>
+                <ListItemIcon>
+                  <PermIdentityIcon />
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography variant="h5">Web Developer</Typography>
+                </ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <LocationOnOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography>NS, CANADA</Typography>
+                </ListItemText>
+              </ListItem>
+              <ListItemLink href="mailto:su2047@gmail.com" target="_blank">
+                <ListItemIcon>
+                  <MailOutlineOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography>su2047@gmail.com</Typography>
+                </ListItemText>
+              </ListItemLink>
+            </List>
+          </Grid>
         </Grid>
-        <Grid item>
-          <List dense>
-            <ListItem>
-              <ListItemIcon>
-                <PermIdentityIcon />
-              </ListItemIcon>
-              <ListItemText>
-                <Typography variant="h5">Web Developer</Typography>
-              </ListItemText>
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <LocationOnOutlinedIcon />
-              </ListItemIcon>
-              <ListItemText>
-                <Typography>NS, CANADA</Typography>
-              </ListItemText>
-            </ListItem>
-            <ListItemLink href="mailto:su2047@gmail.com" target="_blank">
-              <ListItemIcon>
-                <MailOutlineOutlinedIcon />
-              </ListItemIcon>
-              <ListItemText>
-                <Typography>su2047@gmail.com</Typography>
-              </ListItemText>
-            </ListItemLink>
-          </List>
-        </Grid>
-      </Grid>
-      <Grid item container lg={8} spacing={2}>
-        {about.map((i) => {
-          return (
-            <Grid
-              item
-              sm={3}
-              xs={6}
-              key={i.id}
-              container
-              direction="column"
-              spacing={2}
-              className={classes.card}
-            >
-              <Grid item container className={classes.title}>
-                <Grid
-                  container
-                  className={classes.underline}
-                  alignItems="center"
-                >
-                  <Typography variant="h5">{i.title}</Typography>
-                </Grid>
-              </Grid>
+        <Grid item container lg={8} spacing={2}>
+          {about.map((i) => {
+            return (
               <Grid
                 item
+                sm={3}
+                xs={6}
+                key={i.id}
                 container
                 direction="column"
-                spacing={1}
-                justify="center"
-                className={classes.content}
+                spacing={2}
+                className={classes.card}
               >
-                {i.points.map((item, index) => {
-                  return (
-                    <Grid item key={index}>
-                      <Chip
-                        avatar={<CheckIcon />}
-                        label={item}
-                        variant="outline"
-                      />
-                    </Grid>
-                  )
-                })}
+                <Grid item container className={classes.title}>
+                  <Grid
+                    container
+                    className={classes.underline}
+                    alignItems="center"
+                  >
+                    <Typography variant="h5">{i.title}</Typography>
+                  </Grid>
+                </Grid>
+                <Grid
+                  item
+                  container
+                  direction="column"
+                  spacing={1}
+                  justify="center"
+                  className={classes.content}
+                >
+                  {i.points.map((item, index) => {
+                    return (
+                      <Grid item key={index}>
+                        <Chip
+                          avatar={<CheckIcon />}
+                          label={item}
+                          variant="outline"
+                        />
+                      </Grid>
+                    )
+                  })}
+                </Grid>
+                {/* <Avatar src={i.icon.fluid.src} variant="circle" /> */}
               </Grid>
-              {/* <Avatar src={i.icon.fluid.src} variant="circle" /> */}
-            </Grid>
-          )
-        })}
+            )
+          })}
+        </Grid>
       </Grid>
-    </Grid>
+    </Box>
   )
 }
 

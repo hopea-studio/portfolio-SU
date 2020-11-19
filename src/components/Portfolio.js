@@ -37,7 +37,7 @@ const Portfolio = (props) => {
       display='flex'
       justifyContent='center'
     >
-      <Grid container direction='column' lg={10}>
+      <Grid container direction='column' lg={10} spacing={10}>
       {recent.map((i) => {
         return (
           <Grid item container key={i.id} spacing={2}>

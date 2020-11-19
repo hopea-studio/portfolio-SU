@@ -7,15 +7,23 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
   sidebar: {
-    height: "110vh",
+    height: "100vh",
     position: "fixed",
     width: "3vw",
-    paddingTop: "25px",
   },
 
   nav: {
     writingMode: "vertical-rl",
     textOrientation: "mixed",
+    paddingTop: "40px",
+    paddingRight: "5px",
+    textTransform: "uppercase",
+  },
+  icon: {
+    writingMode: "vertical-rl",
+    textOrientation: "mixed",
+    paddingBottom: "20px",
+    paddingRight: "5px",
   },
 }))
 
@@ -23,16 +31,13 @@ const Nav = () => {
   const classes = useStyles()
 
   return (
-    <Grid container className={classes.sidebar} direction="column">
-      <Grid
-        item
-        container
-        className={classes.nav}
-        alignItems="center"
-        justify="center"
-        direction="column"
-        spacing={5}
-      >
+    <Grid
+      container
+      className={classes.sidebar}
+      direction="column"
+      justify="space-between"
+    >
+      <Grid item container className={classes.nav} justify="center" spacing={5}>
         <Grid item>
           <Link color="textPrimary" to="/">
             <Typography>Home</Typography>
@@ -58,6 +63,14 @@ const Nav = () => {
             <Typography>Contact</Typography>
           </Link>
         </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        className={classes.icon}
+        justify="center"
+        spacing={5}
+      >
         <Grid item>
           <MuiLink href="https://www.linkedin.com/in/suxyue/" target="_blank">
             <LinkedInIcon />

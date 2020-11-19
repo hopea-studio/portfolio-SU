@@ -39,9 +39,11 @@ export const query = graphql`
       nodes {
         id
         contentfulid
+        year
         title
         skills
         Slug
+        info
         intro {
           internal {
             content

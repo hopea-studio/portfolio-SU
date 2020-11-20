@@ -103,7 +103,7 @@ const Hero = (props) => {
             </List>
           </Grid>
         </Grid>
-        <Grid item container lg={8} spacing={2}>
+        <Grid item container lg={8} spacing={2} justify='center'>
           {about.map((i, index) => {
             return (
               <Grid
@@ -117,7 +117,11 @@ const Hero = (props) => {
                 className={classes.card}
               >
                 <Grid item className={classes.title}>
-                  <img alt='icons' src={i.icon.file.url} className={classes.image} />
+                  <img
+                    alt="icons"
+                    src={i.icon.file.url}
+                    className={classes.image}
+                  />
                   <Typography variant="h5">{i.title}</Typography>
                 </Grid>
                 <Grid

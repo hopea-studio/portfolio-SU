@@ -16,8 +16,14 @@ const Resume = ({ data }) => {
   const classes = useStyles()
 
   return (
-    <Box py={15} id="resume" display="flex" justifyContent="center" className={classes.resume}>
-      <Grid container md={10}>
+    <Box
+      py={15}
+      id="resume"
+      display="flex"
+      justifyContent="center"
+      className={classes.resume}
+    >
+      <Grid container xs={11} md={10} spacing={2}>
         <Grid item container lg={6} spacing={3}>
           <Grid item lg={4}>
             <Typography variant="h5">Work Experience</Typography>
@@ -76,7 +82,9 @@ const Resume = ({ data }) => {
             })}
           </Grid>
           <Grid item lg={4}>
-            <Typography variant="h5">Education</Typography>
+            <Typography variant="h5">
+              Education
+            </Typography>
           </Grid>
         </Grid>
       </Grid>

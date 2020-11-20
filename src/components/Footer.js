@@ -20,7 +20,7 @@ const Footer = () => {
         justifyContent="center"
         id="contact"
       >
-        <Grid container md={10}>
+        <Grid container xs={11} md={10} spacing={2}>
           <Grid item container lg={6} spacing={3}>
             <Grid item lg={4}>
               <Typography variant="h5">Contact Infomation</Typography>

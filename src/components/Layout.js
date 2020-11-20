@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
 
   return (
     <Box display="flex">
-      <Hidden smDown>
+      <Hidden mdDown>
         <Box className={classes.nav}>
           <Particles />
           <Nav />

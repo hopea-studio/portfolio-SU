@@ -36,6 +36,7 @@ const Nav = () => {
       className={classes.sidebar}
       direction="column"
       justify="space-between"
+      wrap='nowrap'
     >
       <Grid item container className={classes.nav} justify="center" spacing={5}>
         <Grid item>

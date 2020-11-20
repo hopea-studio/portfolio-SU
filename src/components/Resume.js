@@ -1,45 +1,79 @@
-import { Grid, Typography } from "@material-ui/core"
+import { Box, Grid, Typography } from "@material-ui/core"
 import React from "react"
 
 import { makeStyles } from "@material-ui/core/styles"
 
-const useStyles = makeStyles((theme) => ({}))
+const useStyles = makeStyles((theme) => ({
+  resume: {
+    borderTop: '1px solid black'
+  }
+}))
 
 const Resume = ({ data }) => {
   
   const {education:{nodes: edu}, work:{nodes: work}} = data
 
   const classes = useStyles()
+
   return (
-    <Grid item container id="resume">
-      <Grid item container lg={6}>
-        <Grid item lg={4}>
-          <Typography>Work Experience</Typography>
+    <Box py={15} id="resume" display="flex" justifyContent="center" className={classes.resume}>
+      <Grid container md={10}>
+        <Grid item container lg={6} spacing={3}>
+          <Grid item lg={4}>
+            <Typography variant="h5">Work Experience</Typography>
+          </Grid>
+          <Grid item container lg={8} direction="column" spacing={5}>
+            {work.map((item, index) => {
+              return (
+                <Grid item key={index}>
+                  <Typography gutterBottom>
+                    {item.date} / {item.location}
+                  </Typography>
+                  <Typography variant="h6" gutterBottom>
+                    {item.position} / {item.company}
+                  </Typography>
+                  {item.info.map((item, index) => (
+                    <Typography key={index}>
+                      <span role="img" aria-label="emoji">
+                        {" "}
+                        ◾
+                      </span>{" "}
+                      {item}
+                    </Typography>
+                  ))}
+                </Grid>
+              )
+            })}
+          </Grid>
         </Grid>
-        <Grid item container lg={8} direction='column'>
-          {work.map((item, index) => {
-            return (
-              <Grid item key={index}>
-                <Typography>{item.date }</Typography>
-            </Grid>
-          )})}
+        <Grid item container lg={6} spacing={3}>
+          <Grid
+            item
+            container
+            lg={8}
+            direction="column"
+            spacing={5}
+            alignItems="flex-end"
+          >
+            {edu.map((item, index) => {
+              return (
+                <Grid item key={index}>
+                  <Typography gutterBottom align="right">
+                    {item.date} / {item.location}
+                  </Typography>
+                  <Typography align="right" variant="h6">
+                    {item.degree}
+                  </Typography>
+                </Grid>
+              )
+            })}
+          </Grid>
+          <Grid item lg={4}>
+            <Typography variant="h5">Education</Typography>
+          </Grid>
         </Grid>
       </Grid>
-      <Grid item container lg={6}>
-        <Grid item container lg={8} direction='column'>
-          {edu.map((item, index) => {
-            return (
-              <Grid item key={index}>
-                <Typography>{item.date}</Typography>
-              </Grid>
-            )
-          })}
-        </Grid>
-        <Grid item lg={4}>
-          Education
-        </Grid>
-      </Grid>
-    </Grid>
+    </Box>
   )
 }
 

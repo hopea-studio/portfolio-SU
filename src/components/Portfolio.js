@@ -1,7 +1,7 @@
 import { Box, Button, Chip, Grid, Hidden, Typography, Link as MuiLink } from "@material-ui/core"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import Link from "./Link"
+//import Link from "./Link"
 //import Image from "gatsby-image"
 
 const useStyles = makeStyles((theme) => ({
@@ -40,7 +40,9 @@ const Portfolio = (props) => {
                 <Box pt={2} pr={4}>
                   <Grid container direction="column" spacing={2}>
                     <Grid item>
-                      <Typography paragraph variant='subtitle1'>{i.year}</Typography>
+                      <Typography paragraph variant="subtitle1">
+                        {i.year}
+                      </Typography>
                     </Grid>
                     <Grid item>
                       <Typography variant="h5">{i.title}</Typography>
@@ -51,9 +53,15 @@ const Portfolio = (props) => {
                       </Typography>
                     </Grid>
                     <Grid item>
-                      <Typography>◾ {i.info[0]}</Typography>
-                      <Typography>◾ {i.info[1]}</Typography>
-                      <Typography>◾ {i.info[2]}</Typography>
+                      {i.info.map((item, index) => (
+                        <Typography>
+                          <span role="img" aria-label="emoji">
+                            ◾{" "}
+                          </span>
+                          {item}
+                        </Typography>
+                      ))}
+        
                     </Grid>
                     <Grid item container spacing={1}>
                       {i.skills.map((i) => {
@@ -72,7 +80,7 @@ const Portfolio = (props) => {
                     </Grid>
                     <Grid item>
                       <Button>
-                        <Link to={`/portfolios/${i.Slug}`}>Visit</Link>
+                        <MuiLink href={i.git}>git repo</MuiLink>
                       </Button>
                     </Grid>
                   </Grid>

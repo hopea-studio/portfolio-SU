@@ -39,6 +39,8 @@ export const query = graphql`
       nodes {
         id
         contentfulid
+        link
+        git
         year
         title
         skills

@@ -1,14 +1,14 @@
-import { red, blueGrey, grey, deepPurple } from "@material-ui/core/colors"
+import { red, blueGrey, grey } from "@material-ui/core/colors"
 import { createMuiTheme } from "@material-ui/core/styles"
 
 // A custom theme for this app
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: deepPurple[900],
+      main: grey[900],
     },
     secondary: {
-      main: blueGrey[500],
+      main: blueGrey[900],
     },
     test: {
       primary: grey[900],

@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     //border: "1px solid black",
   },
   title: {
-    height: "50%",
+    height: "45%",
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end'
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: "1",
   },
   image: {
-    width: theme.spacing(10),
+    width: theme.spacing(8),
     paddingBottom: theme.spacing(2)
   }
 }))
@@ -117,7 +117,7 @@ const Hero = (props) => {
                 className={classes.card}
               >
                 <Grid item className={classes.title}>
-                  <img src={i.icon.file.url} className={classes.image} />
+                  <img alt='icons' src={i.icon.file.url} className={classes.image} />
                   <Typography variant="h5">{i.title}</Typography>
                 </Grid>
                 <Grid
@@ -131,7 +131,12 @@ const Hero = (props) => {
                   {i.points.map((item, index) => {
                     return (
                       <Grid item key={index}>
-                        <Typography>◾ {item}</Typography>
+                        <Typography>
+                          <span role="img" aria-label="emoji">
+                            ◾{" "}
+                          </span>
+                          {item}
+                        </Typography>
                       </Grid>
                     )
                   })}

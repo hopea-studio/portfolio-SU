@@ -13,7 +13,6 @@ import { makeStyles } from "@material-ui/core/styles"
 //import Image from "gatsby-image"
 
 const useStyles = makeStyles((theme) => ({
-  cover: {},
   chip: {
     fontSize: "1rem",
     marginRight: "2px",

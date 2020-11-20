@@ -39,17 +39,17 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     height: "45%",
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end'
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
   },
   content: {
     flexGrow: "1",
   },
   image: {
     width: theme.spacing(8),
-    paddingBottom: theme.spacing(2)
-  }
+    paddingBottom: theme.spacing(2),
+  },
 }))
 
 const Hero = (props) => {
@@ -103,7 +103,7 @@ const Hero = (props) => {
             </List>
           </Grid>
         </Grid>
-        <Grid item container lg={8} spacing={2} justify='center'>
+        <Grid item container lg={8} spacing={2} justify="center">
           {about.map((i, index) => {
             return (
               <Grid
@@ -136,9 +136,9 @@ const Hero = (props) => {
                     return (
                       <Grid item key={index}>
                         <Typography>
-                          <span role="img" aria-label="emoji">
-                            ◾{" "}
-                          </span>
+                          <Typography display="inline" variant="h6">
+                            •
+                          </Typography>{" "}
                           {item}
                         </Typography>
                       </Grid>

@@ -1,4 +1,12 @@
-import { Box, Button, Chip, Grid, Hidden, Typography, Link as MuiLink } from "@material-ui/core"
+import {
+  Box,
+  Button,
+  Chip,
+  Grid,
+  Hidden,
+  Typography,
+  Link as MuiLink,
+} from "@material-ui/core"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 //import Link from "./Link"
@@ -36,14 +44,7 @@ const Portfolio = (props) => {
                   </video>
                 </Hidden>
               </Grid>
-              <Grid
-                item
-                container
-                xl={6}
-                lg={4}
-                xs={12}
-                direction="column"
-              >
+              <Grid item container xl={6} lg={4} xs={12} direction="column">
                 <Box pt={2} pr={4}>
                   <Grid container direction="column" spacing={2}>
                     <Grid item>
@@ -62,9 +63,9 @@ const Portfolio = (props) => {
                     <Grid item>
                       {i.info.map((item, index) => (
                         <Typography>
-                          <span role="img" aria-label="emoji">
-                            ◾{" "}
-                          </span>
+                          <Typography display="inline" variant="h6">
+                            •
+                          </Typography>{" "}
                           {item}
                         </Typography>
                       ))}

@@ -5,13 +5,15 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
   resume: {
-    borderTop: '1px solid black'
-  }
+    borderTop: "1px solid black",
+  },
 }))
 
 const Resume = ({ data }) => {
-  
-  const {education:{nodes: edu}, work:{nodes: work}} = data
+  const {
+    education: { nodes: edu },
+    work: { nodes: work },
+  } = data
 
   const classes = useStyles()
 
@@ -35,7 +37,7 @@ const Resume = ({ data }) => {
                   <Typography gutterBottom>
                     {item.date} / {item.location}
                     <span role="img" aria-label="emoji">
-                      {" "}
+                      {"  "}
                       💻
                     </span>
                   </Typography>
@@ -44,9 +46,9 @@ const Resume = ({ data }) => {
                   </Typography>
                   {item.info.map((item, index) => (
                     <Typography key={index}>
-                      <span role="img" aria-label="emoji">
-                        ◾
-                      </span>
+                      <Typography display="inline" variant="h6">
+                        •
+                      </Typography>{" "}
                       {item}
                     </Typography>
                   ))}
@@ -82,9 +84,7 @@ const Resume = ({ data }) => {
             })}
           </Grid>
           <Grid item lg={4}>
-            <Typography variant="h5">
-              Education
-            </Typography>
+            <Typography variant="h5">Education</Typography>
           </Grid>
         </Grid>
       </Grid>

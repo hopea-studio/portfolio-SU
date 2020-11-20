@@ -25,11 +25,11 @@ const Portfolio = (props) => {
 
   return (
     <Box id="portfolio" py={12} display="flex" justifyContent="center">
-      <Grid container direction="column" xs={11} md={10} spacing={10}>
+      <Grid container direction="column" xs={11} md={10} lg={12} spacing={10}>
         {recent.map((i) => {
           return (
             <Grid item container key={i.id} spacing={2}>
-              <Grid item xl={6} xs={12} container justify="center">
+              <Grid item xl={6} lg={8} xs={12} container justify="center">
                 <Hidden xsDown>
                   <video autoPlay loop muted playsInline>
                     <source src={i.cover.file.url} type="video/mp4" />
@@ -40,6 +40,7 @@ const Portfolio = (props) => {
                 item
                 container
                 xl={6}
+                lg={4}
                 xs={12}
                 direction="column"
               >

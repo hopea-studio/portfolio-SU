@@ -61,7 +61,6 @@ const Portfolio = (props) => {
                           {item}
                         </Typography>
                       ))}
-        
                     </Grid>
                     <Grid item container spacing={1}>
                       {i.skills.map((i) => {
@@ -80,7 +79,13 @@ const Portfolio = (props) => {
                     </Grid>
                     <Grid item>
                       <Button>
-                        <MuiLink href={i.git}>git repo</MuiLink>
+                        <MuiLink href={i.git}>
+                          git
+                          <span role="img" aria-label="emoji">
+                            {" "}
+                            🔗
+                          </span>
+                        </MuiLink>
                       </Button>
                     </Grid>
                   </Grid>

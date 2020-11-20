@@ -28,6 +28,10 @@ const Resume = ({ data }) => {
                 <Grid item key={index}>
                   <Typography gutterBottom>
                     {item.date} / {item.location}
+                    <span role="img" aria-label="emoji">
+                      {" "}
+                      💻
+                    </span>
                   </Typography>
                   <Typography variant="h6" gutterBottom>
                     {item.position} / {item.company}
@@ -35,9 +39,8 @@ const Resume = ({ data }) => {
                   {item.info.map((item, index) => (
                     <Typography key={index}>
                       <span role="img" aria-label="emoji">
-                        {" "}
                         ◾
-                      </span>{" "}
+                      </span>
                       {item}
                     </Typography>
                   ))}
@@ -59,11 +62,15 @@ const Resume = ({ data }) => {
               return (
                 <Grid item key={index}>
                   <Typography gutterBottom align="right">
+                    <span role="img" aria-label="emoji">
+                      📓{" "}
+                    </span>
                     {item.date} / {item.location}
                   </Typography>
-                  <Typography align="right" variant="h6">
+                  <Typography gutterBottom align="right" variant="h6">
                     {item.degree}
                   </Typography>
+                  <Typography align="right">{item.school}</Typography>
                 </Grid>
               )
             })}

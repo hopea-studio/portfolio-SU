@@ -1,10 +1,11 @@
-import React from "react"
-import Layout from "../components/Layout"
-import Hero from "../components/Hero"
-import Portfolio from "../components/Portfolio"
-import Resume from "../components/Resume"
+import React from "react";
+import Layout from "../components/Layout";
+import Hero from "../components/Hero";
+import Portfolio from "../components/Portfolio";
+import Resume from "../components/Resume";
+import { graphql } from "gatsby";
 
-import './index.css'
+import "./index.css";
 
 export default function Index({ data }) {
   return (
@@ -12,9 +13,8 @@ export default function Index({ data }) {
       <Hero data={data} />
       <Portfolio data={data} />
       <Resume data={data} />
-      
     </Layout>
-  )
+  );
 }
 
 export const query = graphql`
@@ -33,8 +33,7 @@ export const query = graphql`
       }
     }
     recent: allContentfulDevProject(
-      limit: 3
-      sort: { order: ASC, fields: contentfulid }
+      sort: { order: DESC, fields: contentfulid }
     ) {
       nodes {
         id
@@ -82,4 +81,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

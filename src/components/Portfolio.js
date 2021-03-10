@@ -8,24 +8,11 @@ import {
   Link as MuiLink,
 } from "@material-ui/core"
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
+
 //import Link from "./Link"
 //import Image from "gatsby-image"
 
-const useStyles = makeStyles((theme) => ({
-  chip: {
-    fontSize: "1rem",
-    marginRight: "2px",
-  },
-  right: {
-    padding: theme.spacing(1),
-    border: "1px solid red",
-  },
-}))
-
 const Portfolio = (props) => {
-  const classes = useStyles()
-
   const {
     recent: { nodes: recent },
   } = props.data
@@ -36,14 +23,14 @@ const Portfolio = (props) => {
         {recent.map((i) => {
           return (
             <Grid item container key={i.id} spacing={2}>
-              <Grid item xl={6} lg={8} xs={12} container justify="center">
+              <Grid item xl={6} lg={7} xs={12} container justify="center">
                 <Hidden xsDown>
                   <video autoPlay loop muted playsInline>
                     <source src={i.cover.file.url} type="video/mp4" />
                   </video>
                 </Hidden>
               </Grid>
-              <Grid item container xl={6} lg={4} xs={12} direction="column">
+              <Grid item container xl={6} lg={5} xs={12} direction="column">
                 <Box pt={2} pr={4}>
                   <Grid container direction="column" spacing={2}>
                     <Grid item>
@@ -74,7 +61,6 @@ const Portfolio = (props) => {
                         return (
                           <Grid item key={i}>
                             <Chip
-                              className={classes.chip}
                               label={i}
                               color="primary"
                               size="small"

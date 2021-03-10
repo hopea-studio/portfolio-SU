@@ -6,8 +6,8 @@ import {
   Hidden,
   Typography,
   Link as MuiLink,
-} from "@material-ui/core"
-import React from "react"
+} from "@material-ui/core";
+import React from "react";
 
 //import Link from "./Link"
 //import Image from "gatsby-image"
@@ -15,7 +15,7 @@ import React from "react"
 const Portfolio = (props) => {
   const {
     recent: { nodes: recent },
-  } = props.data
+  } = props.data;
 
   return (
     <Box id="portfolio" py={12} display="flex" justifyContent="center">
@@ -67,12 +67,12 @@ const Portfolio = (props) => {
                               variant="outlined"
                             ></Chip>
                           </Grid>
-                        )
+                        );
                       })}
                     </Grid>
                     <Grid item>
                       <Button>
-                        <MuiLink href={i.git}>
+                        <MuiLink href={i.git} target="_blank">
                           git
                           <span role="img" aria-label="emoji">
                             {" "}
@@ -85,11 +85,11 @@ const Portfolio = (props) => {
                 </Box>
               </Grid>
             </Grid>
-          )
+          );
         })}
       </Grid>
     </Box>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;
